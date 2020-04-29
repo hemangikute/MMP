@@ -40,8 +40,8 @@ public class PatientTests
 	HashMap<String, String> hashMap = new HashMap<String, String>();
 
 	
-//	String usernameValue = "HemaKute" + rnd.nextInt(90);
-//	String passwordValue = "HemaKute" + rnd.nextInt(90);
+	String usernameValue = "KuteAarav" + rnd.nextInt(90);
+	String passwordValue = "KuteAarav" + rnd.nextInt(90);
 	
 
 
@@ -67,13 +67,13 @@ public class PatientTests
 	
 				/*  REGISTER A PATIENT  */
 	
-	@Test(enabled=false, priority = 1)
+	@Test(enabled=true, priority = 1)
 	public void registerPatient() throws Exception
 	{
 		
 		
 		RegistrationPage regpage = new RegistrationPage(driver);
-	//    hMap = regpage.registerPatient(usernameValue, passwordValue);
+	    hMap = regpage.registerPatient(usernameValue, passwordValue);
 		
 		String actualmsg = hMap.get("successmsg").trim();
 		String expectedmsg = "Thank you for registering with MMP.";
@@ -82,7 +82,7 @@ public class PatientTests
 	}	
 		
 			/* APPROVE PATIENT */
-	@Test(enabled=false, priority = 10)
+	@Test(enabled=true, priority = 10)
 	public void approvePatient() throws Exception
 	{
 		
@@ -117,9 +117,9 @@ public class PatientTests
 		driver.get("http://96.84.175.78/MMP-Release2-Integrated-Build.6.8.000/portal/login.php");
 		PatientLogin patientlogin = new PatientLogin(driver);
 		
-	//    patientlogin.patientLogin(usernameValue, passwordValue);
+	    patientlogin.patientLogin(usernameValue, passwordValue);
 	   
-	    patientlogin.patientLogin("HemaMKute79", "HemaMKute33");
+	//    patientlogin.patientLogin("HemaMKute79", "HemaMKute33");
 
 
 //	System.out.println("username"+usernameValue);
@@ -138,7 +138,7 @@ public class PatientTests
                    /* VALIDATE PATIENT PROFILE    */
                    
 	
-	@Test(enabled = false, priority = 20)
+	@Test(enabled = true, priority = 20)
 	
 	public void ValidatePatientProfile() throws Exception
 	{
@@ -157,7 +157,7 @@ public class PatientTests
 			/*  EDIT PATIENT PROFILE   */
 			
 	
-	@Test(enabled = false, priority = 25)
+	@Test(enabled = true, priority = 25)
 	
 	public void editPatientProfile() throws Exception
 	{
@@ -217,16 +217,16 @@ public class PatientTests
 		admin.logintoAdmin("Thomas_444", "Edison_444");
 		
 		CreatePatientData patientdata = new CreatePatientData(driver);
-		String FeesResultMessage = patientdata.createPatientFees();
+	//	String FeesResultMessage = patientdata.createPatientFees();
 		
-	//	patientdata.createPatientReport();
+		patientdata.createPatientReport();
 		
-		String PrescriptionResultMessage = patientdata.createPatientPrescription();
+	//	String PrescriptionResultMessage = patientdata.createPatientPrescription();
 			
 	}
 	
 
-	@Test (enabled = true, priority = 40)
+	@Test (enabled = false, priority = 40)
 	public void SendMessageToDoctor() throws Exception
 	{
 						
@@ -235,7 +235,7 @@ public class PatientTests
 	}
 	
 
-	@Test (enabled = true, priority = 45)
+	@Test (enabled = false, priority = 45)
 	public void CheckPatientMessages() throws Exception
 	{
 		driver.get("http://96.84.175.78/MMP-Release2-Admin-Build.2.1.000/login.php");

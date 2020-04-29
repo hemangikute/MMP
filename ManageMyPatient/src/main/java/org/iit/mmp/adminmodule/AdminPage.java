@@ -30,9 +30,10 @@ public class AdminPage {
 		System.out.println("first name is "+hMap.get("firstname"));
 		Thread.sleep(5000);
 		
-		Select approvepatient = new Select(driver.findElement(By.id("sapproval")));
-	//	approvepatient.selectByVisibleText("Accepted");
-		approvepatient.selectByValue("1");
+		Select approvepatient = new Select(driver.findElement(By.tagName("select")));
+		approvepatient.selectByVisibleText("Accepted");
+		Thread.sleep(2000);
+	//	approvepatient.selectByValue("1");
 	
 		
 		

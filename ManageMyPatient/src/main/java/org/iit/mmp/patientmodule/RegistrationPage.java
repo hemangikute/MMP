@@ -33,7 +33,6 @@ public class RegistrationPage {
 		String fNameValue = "hemaFN" + (char) (65+rnd.nextInt(26));
 		firstnameTxtField.sendKeys(fNameValue);
 		hMap.put("firstname", firstnameTxtField.getAttribute("value"));
-		System.out.println("first name of the patient"+fNameValue);
 		
 		WebElement lastnameTxtField = driver.findElement(By.id("lastname"));
 		String lNameValue = "hemaLN" + (char) (65+rnd.nextInt(26));
@@ -96,7 +95,6 @@ public class RegistrationPage {
 		WebElement weightTxtField = driver.findElement(By.id("weight"));
 		weightTxtField.sendKeys("45");
 		hMap.put("weight", weightTxtField.getAttribute("value"));
-		System.out.println("weight of the user is "+weightTxtField);
 		
 		
 		WebElement pharmacyTxtField = driver.findElement(By.id("pharmacy"));

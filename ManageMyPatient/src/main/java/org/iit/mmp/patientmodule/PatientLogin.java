@@ -31,7 +31,8 @@ WebDriver driver;
 		driver.findElement(By.name("submit")).click();
 	
 		
-		
+		HelperMethod submenu = new HelperMethod(driver);
+		submenu.navigateToSubMenu(" Profile ");
 		
 		
 //		driver.findElement(By.id("username")).sendKeys(username);
@@ -43,7 +44,7 @@ WebDriver driver;
 	
 	public String fetchUname()
 	{
-		String unameValue = driver.findElement(By.tagName("h3")).getText();
+		String unameValue = driver.findElement(By.xpath("//span[@class='username']")).getText();
 		return unameValue;
 	}
 	

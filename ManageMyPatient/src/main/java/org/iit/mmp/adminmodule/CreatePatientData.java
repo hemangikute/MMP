@@ -93,7 +93,20 @@ HashMap<String, String> hMap = new HashMap<String, String>();
 	
 	public void createPatientReport() throws AWTException, Exception
 	{
+		HelperMethod submenu = new HelperMethod(driver);
+		submenu.navigateToSubMenu("Patients");
+		
+		driver.findElement(By.xpath("//input[@id='search']")).sendKeys("749420625");
+		//	WebDriverWait wait=new WebDriverWait(driver, 20);
+			WebElement search = driver.findElement(By.xpath("//input[@value='search']"));
+			//search = wait.until(ExpectedConditions.elementToBeClickable(search));
+			search.click();
+			
+			driver.findElement(By.xpath("//a[contains(text(),'hemaFNO')]")).click();
+		
+		
 		driver.findElement(By.xpath("//p[4]//a[1]//input[1]")).click();
+		Thread.sleep(3000);
 		driver.findElement(By.id("exampleInputcardnumber1")).sendKeys("ECG");
 		
 		WebDriverWait wait=new WebDriverWait(driver, 20);
